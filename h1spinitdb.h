@@ -41,16 +41,16 @@ void addSubject(QSqlQuery &query, const QString &code, const QString &title,
 /**
  * @brief addAssessment - add a new assessment to the database
  * @param query - query to reuse
- * @param id - assessment id
+ * @param title - assessment title
  * @param relDate - release date
  * @param dlDate - deadkine date
  * @param maxScore - max allocated score
  * @param score - score for the assessment
  * @param submitted - submitted or not
  */
-void addAssessment(QSqlQuery &query, const QString &id, const QDate relDate, const QDate dlDate,
+void addAssessment(QSqlQuery &query, const QString &title, const QDate relDate, const QDate dlDate,
                    const double maxScore, const double score, const bool submitted) {
-    query.addBindValue(id);
+    query.addBindValue(title);
     query.addBindValue(relDate);
     query.addBindValue(dlDate);
     query.addBindValue(maxScore);
@@ -60,6 +60,10 @@ void addAssessment(QSqlQuery &query, const QString &id, const QDate relDate, con
     query.exec();
 }
 
+/**
+ * @brief databaseConnect - connect to SQLite database
+ * @param dbFileName - file for SQLite database
+ */
 void databaseConnect(const QString &dbFileName) {
     const QString DRIVER ("QSQLITE");
 
@@ -75,27 +79,34 @@ void databaseConnect(const QString &dbFileName) {
     }
 }
 
+/**
+ * @brief createTablesDb - creates pre-defined tables in the db
+ */
 void createTablesDb() {
     QSqlQuery query;
 
-    query.prepare("CREATE TABLE setevik (id INTEGER PRIMARY KEY, name TEXT, vk TEXT, story TEXT, company INTEGER)");
+    query.prepare("CREATE TABLE semesters (id INTEGER PRIMARY KEY, semesterID VARCHAR, startDate DATE, endDate DATE)");
     if (!query.exec()) {
-        qWarning() << "Database create tables (setevik) ERROR: " << query.lastError().text();
+        qWarning() << "Database create tables (semester) ERROR: " << query.lastError().text();
     }
 
-    query.prepare("CREATE TABLE companies (id INTEGER PRIMARY KEY, name TEXT, vk TEXT, keyword TEXT)");
+    query.prepare("CREATE TABLE subjects (id INTEGER PRIMARY KEY, code VARCHAR, title VARCHAR, numAssts INTEGER, finalScore DOUBLE, semester INTEGER)");
     if (!query.exec()) {
-        qWarning() << "Database create tables (companied) ERROR: " << query.lastError().text();
+        qWarning() << "Database create tables (subjects) ERROR: " << query.lastError().text();
     }
 
-    query.prepare("CREATE TABLE timers (id INTEGER PRIMARY KEY, name INTEGER, start_date INTEGER, duration INTEGER, description TEXT, penalty TEXT)");
+    query.prepare("CREATE TABLE assessments (id INTEGER PRIMARY KEY, title VARCHAR, relDate DATE, dlDate DATE, maxScore DOUBLE, score DOUBLE, submitted BOOLEAN)");
     if (!query.exec()) {
         qWarning() << "Database create tables (timers) ERROR: " << query.lastError().text();
     }
 
 }
 
-void initiSetevikDB(const QString &dbFileName) {
+/**
+ * @brief initDB - initialises database
+ * @param dbFileName - file to store db
+ */
+void initDB(const QString &dbFileName) {
 
     bool dbFileExists = (QFileInfo::exists(dbFileName) && QFileInfo(dbFileName).isFile());
     databaseConnect(dbFileName);
@@ -103,14 +114,7 @@ void initiSetevikDB(const QString &dbFileName) {
     // TODO: check tables, NOT file existense
     if (!dbFileExists) {
         createTablesDb();
-        std::cout << "DB tables created" << std::endl;
     }
-}
-QSqlError initDB() {
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-
-
-    return QSqlError();
 }
 
 #endif // H1SPINITDB_H
