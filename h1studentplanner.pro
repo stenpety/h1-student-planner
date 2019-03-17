@@ -20,3 +20,6 @@ SOURCES += \
 HEADERS += \
         mainwindow.h \
     h1spinitdb.h
+
+FORMS += \
+    mainwindow.ui
