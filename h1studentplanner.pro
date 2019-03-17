@@ -22,4 +22,5 @@ HEADERS += \
     h1spinitdb.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    newsemesterform.ui
