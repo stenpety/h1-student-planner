@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtWidgets>
 #include "ui_mainwindow.h"
 
 class MainWindow : public QMainWindow
@@ -14,6 +15,9 @@ public:
 
 private:
     Ui::MainWindow ui;
+
+private slots:
+    void about();
 };
 
 #endif // MAINWINDOW_H
