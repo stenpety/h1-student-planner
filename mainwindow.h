@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QtWidgets>
 #include "ui_mainwindow.h"
-#include "newsemesterform.h"
+#include "semesters.h"
 
 class MainWindow : public QMainWindow
 {
@@ -19,7 +19,7 @@ private:
 
 private slots:
     void about();
-    void showNewSemesterForm();
+    void showSemesters();
 };
 
 #endif // MAINWINDOW_H

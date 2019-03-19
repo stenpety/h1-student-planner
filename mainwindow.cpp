@@ -5,7 +5,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::about);
-    connect(ui->actionSemesters, &QAction::triggered, this, &MainWindow::showNewSemesterForm);
+    connect(ui->actionSemesters, &QAction::triggered, this, &MainWindow::showSemesters);
 }
 
 MainWindow::~MainWindow() {
@@ -17,7 +17,7 @@ void MainWindow::about() {
             tr("<p> About H1 Student Planner"));
 }
 
-void MainWindow::showNewSemesterForm() {
-    auto newSemesterForm = new NewSemesterForm;
-    newSemesterForm->show();
+void MainWindow::showSemesters() {
+    auto semesters = new Semesters;
+    semesters->show();
 }

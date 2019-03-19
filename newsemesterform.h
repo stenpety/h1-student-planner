@@ -2,7 +2,10 @@
 #define NEWSEMESTERFORM_H
 
 #include <QWidget>
-#include "ui_newsemesterform.h"
+
+namespace Ui {
+class NewSemesterForm;
+}
 
 class NewSemesterForm : public QWidget
 {

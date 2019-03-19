@@ -1,8 +1,10 @@
 #include "newsemesterform.h"
+#include "ui_newsemesterform.h"
 
 NewSemesterForm::NewSemesterForm(QWidget *parent) :
-    QWidget(parent), ui(new Ui::NewSemesterForm) {
-
+    QWidget(parent),
+    ui(new Ui::NewSemesterForm)
+{
     ui->setupUi(this);
 }
 
