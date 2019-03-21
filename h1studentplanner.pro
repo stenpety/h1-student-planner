@@ -16,16 +16,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    newsemesterform.cpp \
-    semesters.cpp
+    semesters.cpp \
+    newsemester.cpp
 
 HEADERS += \
         mainwindow.h \
     h1spinitdb.h \
-    newsemesterform.h \
-    semesters.h
+    semesters.h \
+    newsemester.h
 
 FORMS += \
     mainwindow.ui \
-    newsemesterform.ui \
-    semesters.ui
+    semesters.ui \
+    newsemester.ui

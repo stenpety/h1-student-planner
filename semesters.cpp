@@ -14,6 +14,9 @@ Semesters::~Semesters() {
 }
 
 void Semesters::showNewSemesterForm() {
-    auto newSemesterForm = new NewSemesterForm;
-    newSemesterForm->show();
+    auto newSemester = new NewSemester();
+    if (newSemester->exec()) {
+        QMessageBox::about(this, tr("Success"),
+                tr("<p> Success"));
+    }
 }

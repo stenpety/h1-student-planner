@@ -2,7 +2,8 @@
 #define SEMESTERS_H
 
 #include <QDialog>
-#include "newsemesterform.h"
+#include <QtWidgets>
+#include "newsemester.h"
 
 namespace Ui {
 class Semesters;
