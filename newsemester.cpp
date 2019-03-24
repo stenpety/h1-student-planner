@@ -6,9 +6,18 @@ NewSemester::NewSemester(QWidget *parent) :
     ui(new Ui::NewSemester)
 {
     ui->setupUi(this);
+    semesterLineEdit = ui->semesterLineEdit;
 }
 
 NewSemester::~NewSemester()
 {
     delete ui;
+}
+
+QString NewSemester::getSemesterLineEditText() {
+    return semesterLineEdit->text();
+}
+
+void NewSemester::activateSubmitButton() {
+
 }

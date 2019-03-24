@@ -18,10 +18,16 @@ public:
     ~Semesters();
 
 private:
-    Ui::Semesters *ui;
+
 
 private slots:
     void showNewSemesterForm();
+
+public:
+
+private:
+    Ui::Semesters *ui;
+
 };
 
 #endif // SEMESTERS_H

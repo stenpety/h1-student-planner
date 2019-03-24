@@ -17,6 +17,6 @@ void Semesters::showNewSemesterForm() {
     auto newSemester = new NewSemester();
     if (newSemester->exec()) {
         QMessageBox::about(this, tr("Success"),
-                tr("<p> Success"));
+                tr(newSemester->getSemesterLineEditText().toStdString().c_str()) );
     }
 }
