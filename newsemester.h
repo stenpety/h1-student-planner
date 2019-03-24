@@ -17,6 +17,8 @@ public:
     ~NewSemester();
 
     QString getSemesterLineEditText();
+    QDate getStartDate();
+    QDate getEndDate();
 
 private:
 
@@ -33,7 +35,8 @@ public:
 private:
     Ui::NewSemester *ui;
     QLineEdit *semesterLineEdit;
-
+    QDateEdit *startDateEdit;
+    QDateEdit *endDateEdit;
 };
 
 

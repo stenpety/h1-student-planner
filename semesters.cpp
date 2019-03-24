@@ -61,8 +61,14 @@ void Semesters::selestInSemestersTable(const int index) {
 void Semesters::showNewSemesterForm() {
     auto newSemester = new NewSemester();
     if (newSemester->exec()) {
-        QMessageBox::about(this, tr("Success"),
-                tr(newSemester->getSemesterLineEditText().toStdString().c_str()) );
+        int rowCount = semestersModel->rowCount();
+        semestersModel->insertRows(rowCount, 1);
+        semestersModel->setData(semestersModel->index(rowCount, 1), newSemester->getSemesterLineEditText());
+        semestersModel->setData(semestersModel->index(rowCount, 2), newSemester->getStartDate());
+        semestersModel->setData(semestersModel->index(rowCount, 3), newSemester->getEndDate());
+        semestersModel->submitAll();
+
+        ui->semestersTableView->resizeColumnsToContents();
     }
 }
 
