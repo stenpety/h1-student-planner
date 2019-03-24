@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QtWidgets>
+#include <QtSql>
 #include "newsemester.h"
 
 namespace Ui {
@@ -18,15 +19,22 @@ public:
     ~Semesters();
 
 private:
-
+    void setupDbModel();
+    void setupTable();
+    void selestInSemestersTable(const int);
 
 private slots:
     void showNewSemesterForm();
+    void deleteSemester();
 
 public:
 
 private:
     Ui::Semesters *ui;
+
+    QSqlRelationalTableModel *semestersModel;
+    QDataWidgetMapper *semestersMapper;
+    QSqlRelationalDelegate *semestersDelegate;
 
 };
 
