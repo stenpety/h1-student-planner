@@ -9,7 +9,11 @@ Semesters::Semesters(QWidget *parent) :
     setupDbModel();
     setupTable();
 
+    /* New semester */
     connect(ui->newSemesterButton, &QPushButton::pressed, this, &Semesters::showNewSemesterForm);
+
+    /* Delete semester */
+    connect(ui->deleteSemesterButton, &QPushButton::pressed, this, &Semesters::deleteSemester);
 }
 
 Semesters::~Semesters() {
@@ -73,5 +77,33 @@ void Semesters::showNewSemesterForm() {
 }
 
 void Semesters::deleteSemester() {
-    //TODO: implement delete
+    /* Index to delete = currently selected row */
+    int rowToDelete = semestersMapper->currentIndex();
+
+    /* Deletion dialog */
+    QMessageBox::StandardButton deleteDialog;
+    QString semesterToDelete = semestersModel->record(rowToDelete).value(1).toString();
+    deleteDialog = QMessageBox::question(this, "Delete semester", "Delete " + semesterToDelete + "?\nAre you sure?",
+                                         QMessageBox::Yes|QMessageBox::No);
+    if (deleteDialog == QMessageBox::Yes) {
+
+
+        if (!(semestersModel->removeRow(rowToDelete))) {
+            QMessageBox::critical(this, "Unable to delete semester",
+                                  "Error deleting semester: " +
+                                  semestersModel->lastError().text());
+            return;
+        }
+        /* Apply changes to the DB */
+        semestersModel->submitAll();
+        semestersMapper->submit();
+
+        if (semestersModel->rowCount() > 0) {
+            selestInSemestersTable(rowToDelete);
+        } else {
+            selestInSemestersTable(-1);
+        }
+
+        ui->semestersTableView->resizeColumnsToContents();
+    }
 }

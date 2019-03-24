@@ -52,6 +52,19 @@
     <string>New Semester</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="deleteSemesterButton">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>600</y>
+     <width>111</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete Sem.</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections>
