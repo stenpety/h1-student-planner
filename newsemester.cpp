@@ -6,9 +6,6 @@ NewSemester::NewSemester(QWidget *parent) :
     ui(new Ui::NewSemester)
 {
     ui->setupUi(this);
-    semesterLineEdit = ui->semesterLineEdit;
-    startDateEdit = ui->startDateEdit;
-    endDateEdit = ui->endDateEdit;
 }
 
 NewSemester::~NewSemester()
@@ -17,15 +14,15 @@ NewSemester::~NewSemester()
 }
 
 QString NewSemester::getSemesterLineEditText() {
-    return semesterLineEdit->text();
+    return ui->semesterLineEdit->text();
 }
 
 QDate NewSemester::getStartDate() {
-    return startDateEdit->date();
+    return ui->startDateEdit->date();
 }
 
 QDate NewSemester::getEndDate() {
-    return endDateEdit->date();
+    return ui->endDateEdit->date();
 }
 
 void NewSemester::activateSubmitButton() {

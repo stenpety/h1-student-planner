@@ -34,9 +34,6 @@ public:
 
 private:
     Ui::NewSemester *ui;
-    QLineEdit *semesterLineEdit;
-    QDateEdit *startDateEdit;
-    QDateEdit *endDateEdit;
 };
 
 

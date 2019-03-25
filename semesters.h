@@ -21,7 +21,7 @@ public:
 private:
     void setupDbModel();
     void setupTable();
-    void selestInSemestersTable(const int);
+    void selectInSemestersTable(const int);
 
 private slots:
     void showNewSemesterForm();

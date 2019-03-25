@@ -2,6 +2,9 @@
 #define SUBJECTS_H
 
 #include <QDialog>
+#include <QtWidgets>
+#include <QtSql>
+#include "newsubject.h"
 
 namespace Ui {
 class Subjects;
@@ -16,7 +19,23 @@ public:
     ~Subjects();
 
 private:
+    void setupDbModel();
+    void setupTable();
+    void selectInSubjectsTable(const int);
+
+public slots:
+
+private slots:
+    void showNewSubjectForm();
+    void showEditSubjectForm();
+    void deleteSubject();
+
+private:
     Ui::Subjects *ui;
+
+    QSqlRelationalTableModel *subjectsModel;
+    QDataWidgetMapper *subjectsMapper;
+    QSqlRelationalDelegate *subjectsDelegate;
 };
 
 #endif // SUBJECTS_H

@@ -54,10 +54,10 @@ void Semesters::setupTable() {
 
     connect(ui->semestersTableView->selectionModel(), &QItemSelectionModel::currentRowChanged,
             semestersMapper, &QDataWidgetMapper::setCurrentModelIndex);
-    selestInSemestersTable(0);
+    selectInSemestersTable(0);
 }
 
-void Semesters::selestInSemestersTable(const int index) {
+void Semesters::selectInSemestersTable(const int index) {
     semestersMapper->setCurrentIndex(index);
     ui->semestersTableView->selectRow(index);
 }
@@ -74,6 +74,7 @@ void Semesters::showNewSemesterForm() {
 
         ui->semestersTableView->resizeColumnsToContents();
     }
+    delete newSemester;
 }
 
 void Semesters::deleteSemester() {
@@ -99,9 +100,9 @@ void Semesters::deleteSemester() {
         semestersMapper->submit();
 
         if (semestersModel->rowCount() > 0) {
-            selestInSemestersTable(rowToDelete);
+            selectInSemestersTable(rowToDelete);
         } else {
-            selestInSemestersTable(-1);
+            selectInSemestersTable(-1);
         }
 
         ui->semestersTableView->resizeColumnsToContents();
