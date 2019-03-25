@@ -17,15 +17,18 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     semesters.cpp \
-    newsemester.cpp
+    newsemester.cpp \
+    subjects.cpp
 
 HEADERS += \
         mainwindow.h \
     h1spinitdb.h \
     semesters.h \
-    newsemester.h
+    newsemester.h \
+    subjects.h
 
 FORMS += \
     mainwindow.ui \
     semesters.ui \
-    newsemester.ui
+    newsemester.ui \
+    subjects.ui

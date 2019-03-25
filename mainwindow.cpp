@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::about);
     connect(ui->actionSemesters, &QAction::triggered, this, &MainWindow::showSemesters);
+    connect(ui->actionSubjects, &QAction::triggered, this, &MainWindow::showSubjects);
 }
 
 MainWindow::~MainWindow() {
@@ -22,4 +23,9 @@ void MainWindow::about() {
 void MainWindow::showSemesters() {
     auto semesters = new Semesters;
     semesters->show();
+}
+
+void MainWindow::showSubjects() {
+    auto subjects = new Subjects;
+    subjects->show();
 }

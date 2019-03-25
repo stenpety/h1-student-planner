@@ -5,6 +5,7 @@
 #include <QtWidgets>
 #include "ui_mainwindow.h"
 #include "semesters.h"
+#include "subjects.h"
 
 class MainWindow : public QMainWindow
 {
@@ -19,6 +20,7 @@ private:
 private slots:
     void about();
     void showSemesters();
+    void showSubjects();
 
 private:
     Ui::MainWindow *ui;
