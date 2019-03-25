@@ -6,6 +6,7 @@
 #include "ui_mainwindow.h"
 #include "semesters.h"
 #include "subjects.h"
+#include "assignments.h"
 
 class MainWindow : public QMainWindow
 {
@@ -21,6 +22,7 @@ private slots:
     void about();
     void showSemesters();
     void showSubjects();
+    void showAssignments();
 
 private:
     Ui::MainWindow *ui;
