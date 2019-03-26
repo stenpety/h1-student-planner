@@ -38,7 +38,7 @@ void createTablesDb() {
         qWarning() << "Database create tables (subjects) ERROR: " << query.lastError().text();
     }
 
-    query.prepare("CREATE TABLE assessments (id INTEGER PRIMARY KEY, title VARCHAR, relDate DATE, dlDate DATE, maxScore DOUBLE, score DOUBLE, submitted BOOLEAN)");
+    query.prepare("CREATE TABLE assignments (id INTEGER PRIMARY KEY, title VARCHAR, relDate DATE, dlDate DATE, maxScore DOUBLE, score DOUBLE, submitted BOOLEAN, subject INTEGER)");
     if (!query.exec()) {
         qWarning() << "Database create tables (timers) ERROR: " << query.lastError().text();
     }

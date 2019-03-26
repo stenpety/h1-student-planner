@@ -20,7 +20,8 @@ SOURCES += \
     newsemester.cpp \
     subjects.cpp \
     newsubject.cpp \
-    assignments.cpp
+    assignments.cpp \
+    newassignment.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -29,7 +30,8 @@ HEADERS += \
     newsemester.h \
     subjects.h \
     newsubject.h \
-    assignments.h
+    assignments.h \
+    newassignment.h
 
 FORMS += \
     mainwindow.ui \
@@ -37,4 +39,5 @@ FORMS += \
     newsemester.ui \
     subjects.ui \
     newsubject.ui \
-    assignments.ui
+    assignments.ui \
+    newassignment.ui
