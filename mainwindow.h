@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QtWidgets>
 #include "ui_mainwindow.h"
+#include "plannermodel.h"
 #include "semesters.h"
 #include "subjects.h"
 #include "assignments.h"
@@ -26,6 +27,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    PlannerModel plannerModel;
 
     // TODO: move to settings
     const QString DBPATH = QStandardPaths::locate(QStandardPaths::HomeLocation,

@@ -5,6 +5,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     initDB(SPDBFILE);
+//    plannerModel = new PlannerModel();
+    ui->plannerTableView->setModel(&plannerModel);
 
     connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::about);
     connect(ui->actionSemesters, &QAction::triggered, this, &MainWindow::showSemesters);
