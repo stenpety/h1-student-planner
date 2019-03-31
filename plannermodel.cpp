@@ -5,18 +5,18 @@ PlannerModel::PlannerModel(QObject *parent): QAbstractTableModel (parent) {
 }
 
 int PlannerModel::rowCount(const QModelIndex & /*parent*/) const {
-   return 2;
+   return 15;
 }
 
 int PlannerModel::columnCount(const QModelIndex & /*parent*/) const {
-    return 3;
+    return 90;
 }
 
 QVariant PlannerModel::data(const QModelIndex &index, int role) const {
     if (role == Qt::DisplayRole)
-       return QString("Row%1, Column%2")
-                   .arg(index.row() + 1)
-                   .arg(index.column() +1);
+       return QString("%1:%2")
+                   .arg( (index.row() + 1)%10)
+                   .arg( (index.column() +1)%10);
 
     return QVariant();
 }

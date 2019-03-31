@@ -22,7 +22,10 @@ SOURCES += \
     newsubject.cpp \
     assignments.cpp \
     newassignment.cpp \
-    plannermodel.cpp
+    plannermodel.cpp \
+    semester.cpp \
+    subject.cpp \
+    assignment.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -33,7 +36,10 @@ HEADERS += \
     newsubject.h \
     assignments.h \
     newassignment.h \
-    plannermodel.h
+    plannermodel.h \
+    semester.h \
+    subject.h \
+    assignment.h
 
 FORMS += \
     mainwindow.ui \
