@@ -6,7 +6,7 @@
 
 class Assignment {
 public:
-    explicit Assignment(int, QString, QDate, QDate, double);
+    explicit Assignment(int, QString, QDate, QDate, double, int);
     Assignment(const Assignment &);
     Assignment();
     ~Assignment();
@@ -24,6 +24,7 @@ private:
     double maxScore;
     double score;
     bool submitted;
+    int subjectID;
 };
 
 #endif // ASSIGNMENT_H

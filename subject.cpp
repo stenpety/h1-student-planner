@@ -1,7 +1,8 @@
 #include "subject.h"
 
-Subject::Subject(int id, QString code, QString title, int numAssts) :
-    id(id), code(code), title(title), numAssts(numAssts), finalScore(0.0) {
+Subject::Subject(int id, QString code, QString title, int numAssts, int semesterID) :
+    id(id), code(code), title(title), numAssts(numAssts),
+    finalScore(0.0), semesterID(semesterID) {
     assignmentsList = new QVector<Assignment>;
 }
 
