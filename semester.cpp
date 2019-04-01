@@ -2,13 +2,13 @@
 
 Semester::Semester(int id, QString semesterID, QDate startDate, QDate endDate) :
     id(id), semesterID(semesterID), startDate(startDate), endDate(endDate) {
-//    subjectList = new QVector<Subject>;
+    subjectList = new QVector<Subject>;
 }
 
 Semester::~Semester() {
-//    delete subjectList;
+    delete subjectList;
 }
 
 void Semester::addSubject(Subject newSubject) {
-//    subjectList->push_back(newSubject);
+    subjectList->push_back(newSubject);
 }

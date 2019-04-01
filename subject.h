@@ -8,10 +8,11 @@
 class Subject {
 public:
     explicit Subject(int, QString, QString, int);
+    Subject();
     ~Subject();
 
     void setFinalScore(double);
-    void addAssignment(Assignment);
+    void addAssignment(const Assignment);
 
     /* Properties */
     /* id INTEGER PRIMARY KEY, code VARCHAR, title VARCHAR, numAssts INTEGER, finalScore DOUBLE */
@@ -21,7 +22,7 @@ private:
     QString title;
     int numAssts;
     double finalScore;
-//    QVector<Assignment> *assignmentsList;
+    QVector<Assignment> *assignmentsList;
 };
 
 #endif // SUBJECT_H

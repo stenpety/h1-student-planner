@@ -6,7 +6,10 @@
 
 class Assignment {
 public:
-    Assignment(int, QString, QDate, QDate, double);
+    explicit Assignment(int, QString, QDate, QDate, double);
+    Assignment(const Assignment &);
+    Assignment();
+    ~Assignment();
 
     void setScore(double);
     void submitAsgt();
@@ -16,7 +19,7 @@ public:
 private:
     int id;
     QString title;
-    QDate relDAte;
+    QDate relDate;
     QDate dlDate;
     double maxScore;
     double score;

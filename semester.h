@@ -23,7 +23,7 @@ private:
     QString semesterID;
     QDate startDate;
     QDate endDate;
-//    QVector<Subject> *subjectList;
+    QVector<Subject> *subjectList;
 };
 
 #endif // SEMESTER_H
