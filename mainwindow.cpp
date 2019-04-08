@@ -1,10 +1,9 @@
 #include "mainwindow.h"
-#include "h1spinitdb.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent), ui(new Ui::MainWindow) {
+
     ui->setupUi(this);
-    initDB(SPDBFILE);
     ui->plannerTableView->setModel(&plannerModel);
 
     for (int i=0; i<plannerModel.columnCount(); ++i) {

@@ -29,10 +29,5 @@ private:
     Ui::MainWindow *ui;
     PlannerModel plannerModel;
 
-    // TODO: move to settings
-    const QString DBPATH = QStandardPaths::locate(QStandardPaths::HomeLocation,
-                                                  QString(), QStandardPaths::LocateDirectory);
-    const QString SPDBFILE = DBPATH + "test/db/h1sp_db.sqlite";
-
 };
 #endif // MAINWINDOW_H
